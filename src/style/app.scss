@@ -1,0 +1,160 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#mainSections{
+  background-color: black;
+  background-size: cover;
+  height: 100vh;
+}
+.container{
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.mainBlock{
+  text-align: center;
+  .currentBlock{
+    display: none;
+    position: relative;
+    border-radius: 3px;
+    background: url("../public/images/mainBG.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    margin: 30px;
+    color: darkblue;
+    #closeBlock{
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url("../public/images/close.png") 50% 50% no-repeat;
+      background-size: 100%;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+    .currentBlockRow{
+      margin: 10px 0;
+      padding-top: 20px;
+      font:{
+        size: 100px;
+      }
+      .otherBlock{
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+    #locRow{
+      font:{
+        size: 40px;
+      }
+      padding: 0 100px;
+    }
+    .otherProp{
+      padding: 0 20px;
+      font:{
+        size: 0;
+      }
+      #pressBlock{
+        background: url(../public/images/bar.png) 0 50% no-repeat;
+        background-size: 35%;
+      };
+      #humBlock{
+        background: url(../public/images/hum2.png) 0 50% no-repeat;
+        background-size: 35%;
+      };
+      #windBlock{
+        background: url("../public/images/wind.png") 0 50% no-repeat;
+        background-size: 35%;
+      };
+      .otherBlock{
+        display: inline-block;
+        vertical-align: top;
+        padding: 20px 30px 20px 60px;
+        font:{
+          size: 25px;
+        }
+        &:last-child{
+          padding-right: 0;
+        }
+
+      }
+    }
+  }
+  .prevBlock{
+    border-radius: 5px;
+    display: inline-block;
+    background: url("../public/images/mainBG.jpg") 50% 50% no-repeat;
+    margin: 30px;
+    padding: 15px;
+    .prevBlockRow{
+      h1{
+        font:{
+          family: 'Lora', serif;
+          size: 25px;
+        };
+        color: darkblue;
+      }
+      .searchWrap{
+        padding: 10px 20px;
+        position: relative;
+
+        #cityID{
+          height: 30px;
+          vertical-align: top;
+          width: 200px;
+          font:{
+            family: 'Lora', serif;
+            size: 20px;
+          };
+          color: darkblue;
+          padding-left: 5px;
+          border: none;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          outline: none;
+
+        }
+        @mixin pH{
+          opacity: 1;
+          transition: opacity 0.3s ease;
+          color: darkblue; font-size: 20px;
+        }
+        @mixin pHFocus{
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          color: darkblue; font-size: 20px;
+        }
+        #cityID::-webkit-input-placeholder       {@include pH}
+        #cityID::-moz-placeholder                {@include pH}
+        #cityID:-moz-placeholder                 {@include pH}
+        #cityID:-ms-input-placeholder            {@include pH}
+        #cityID:focus::-webkit-input-placeholder {@include pHFocus}
+        #cityID:focus::-moz-placeholder          {@include pHFocus}
+        #cityID:focus:-moz-placeholder           {@include pHFocus}
+        #cityID:focus:-ms-input-placeholder      {@include pHFocus}
+        #cityList{
+          display: block;
+          width: 200px;
+          li{
+            list-style: none;
+            text-align: left;
+            padding: 5px;
+            cursor: pointer;
+            &:last-child{
+              border-bottom-left-radius: 3px;
+              border-bottom-right-radius: 3px;
+            }
+            &:hover{
+              background-color: #ffffff66;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
